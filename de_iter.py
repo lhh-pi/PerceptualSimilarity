@@ -13,8 +13,9 @@ for filename in os.listdir(folder_path):
     filepath = os.path.join(folder_path, filename)
 
     # 修改文件名
-    start = filename.find('_')
-    end = filename.find('.')
-    new_filename = filename[:start] + filename[end:]
+    # start = filename.find('_')
+    # end = filename.find('.')
+    # new_filename = filename[:start] + filename[end:]
+    new_filename = filename[:4] + '.png'
     new_filepath = os.path.join(folder_path, new_filename)
     os.rename(filepath, new_filepath)

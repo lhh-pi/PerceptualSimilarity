@@ -16,6 +16,9 @@ loss_fn = lpips.LPIPS(net='alex', version=opt.version)
 if opt.use_gpu:
     loss_fn.cuda()
 
+if opt.out == '':
+    opt.out = 'results/' + opt.dir1.split('/')[1][5:] + '.txt'
+
 # crawl directories
 f = open(opt.out, 'w')
 files = os.listdir(opt.dir0)
